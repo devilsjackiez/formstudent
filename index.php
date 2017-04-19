@@ -18,23 +18,10 @@
 <body>
 <?php
 
-$data = file_get_contents('table1.json');
-$json = json_decode($data);
-if (count($data)) {
-    // Open the table
-    echo "<table>";
+$str = file_get_contents('table1.json');
+$json = json_decode($str, true);
+echo '<pre>' . print_r($json, true) . '</pre>';
 
-    // Cycle through the array
-    foreach ($data as $stand) {
-
-        // Output a row
-        echo $stand["StudentID"];
-
-    }
-
-    // Close the table
-    echo "</table>";
-}
 ?>
 <div class="container" style="background-color: rgba(255,255,255,0.8);margin-top: 40px; padding-bottom: 40px;">
     <h1 style="font-weight: bolder;">Configuration form for team leader of a team</h1>
